@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-MOVE_DISTANCE = 1
+BULLET_SPEED = 1
 
 
 class Bullet(Turtle):
@@ -21,8 +21,7 @@ class Bullet(Turtle):
 
     def move_bullets(self):
         for count, bullet in enumerate(self.bullet_list):
-            bullet.forward(MOVE_DISTANCE)
+            bullet.forward(BULLET_SPEED)
             if bullet.ycor() > self.screenheight / 2 + 20:
                 bullet.hideturtle()
                 del self.bullet_list[count]
-                # print(self.bullet_list)
